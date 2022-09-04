@@ -44,6 +44,7 @@
             // 
             // buttonCancalAddBook
             // 
+            this.buttonCancalAddBook.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonCancalAddBook.Location = new System.Drawing.Point(626, 487);
             this.buttonCancalAddBook.Name = "buttonCancalAddBook";
             this.buttonCancalAddBook.Size = new System.Drawing.Size(194, 78);
@@ -60,6 +61,7 @@
             this.buttonAddBook.TabIndex = 14;
             this.buttonAddBook.Text = "确认修改";
             this.buttonAddBook.UseVisualStyleBackColor = true;
+            this.buttonAddBook.Click += new System.EventHandler(this.buttonEditBook_Click);
             // 
             // textBoxBookStock
             // 
@@ -170,7 +172,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormEditBook";
             this.Text = "编辑图书";
-            this.Load += new System.EventHandler(this.FormEditBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

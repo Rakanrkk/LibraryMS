@@ -50,9 +50,6 @@ namespace BookManageApp_Access
                         MessageBox.Show("出现错误！");
                     }
                     dao.DaoClose();
-                        
-                    
-
                 }
                     
             }
@@ -83,8 +80,22 @@ namespace BookManageApp_Access
 
         private void buttonEditBook_Click(object sender, EventArgs e)
         {
-            FormEditBook formEditBook = new FormEditBook();
-            formEditBook.ShowDialog();
+            try
+            {
+                string id = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
+                string title=dataGridViewBook.SelectedRows[0].Cells[1].Value.ToString();
+                string author=dataGridViewBook.SelectedRows[0].Cells[2].Value.ToString();
+                string press=dataGridViewBook.SelectedRows[0].Cells[3].Value.ToString();
+                string stock=dataGridViewBook.SelectedRows[0].Cells[4].Value.ToString();
+                FormEditBook formEditBook = new FormEditBook(id,title,author,press,stock);
+                formEditBook.ShowDialog();
+                ShowBooks();
+            }
+            catch
+            {
+                MessageBox.Show("请选中要修改的书籍");
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
