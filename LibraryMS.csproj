@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D5904BFA-74C5-4E32-8015-50478D3C31E3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <RootNamespace>BookManageApp_Access</RootNamespace>
+    <AssemblyName>BookManageApp_Access</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -101,16 +101,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao.cs" />
-    <Compile Include="Data.cs" />
+    <Compile Include="DB\Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormAddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormAddBook.Designer.cs">
+      <DependentUpon>FormAddBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Dao.cs" />
+    <Compile Include="AdminForms\BookManageForms\FormBookMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormBookMS.Designer.cs">
+      <DependentUpon>FormBookMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormEditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormEditBook.Designer.cs">
+      <DependentUpon>FormEditBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\UserData.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Project\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStu.Designer.cs">
+      <DependentUpon>FormStu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminForms\BookManageForms\FormAddBook.resx">
+      <DependentUpon>FormAddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\BookManageForms\FormBookMS.resx">
+      <DependentUpon>FormBookMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\BookManageForms\FormEditBook.resx">
+      <DependentUpon>FormEditBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,8 +171,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="LibraryMS_TemporaryKey.pfx" />
-    <None Include="packages.config" />
+    <None Include="app.config" />
+    <None Include="DB\Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB\Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB\Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Project\LibraryMS_TemporaryKey.pfx" />
+    <None Include="Project\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,10 +194,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="user.csv" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Project\App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -152,5 +210,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\Database1.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
