@@ -102,6 +102,7 @@ namespace BookManageApp_Access.StuForms
             {
                 MessageBox.Show("库存不足");
             }
+            dao.DaoClose();
         }
     }
 }
