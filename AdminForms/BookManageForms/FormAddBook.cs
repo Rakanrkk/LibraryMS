@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BookManageApp_Access
+namespace BookManageApp_Access.AdminForms.BookManageForms
 {
     public partial class FormAddBook : Form
     {
@@ -28,12 +28,23 @@ namespace BookManageApp_Access
                 && textBoxBookStock.Text != "" 
                 && textBoxBookTitle.Text != "")
             {
-                Dao dao = new Dao();
-                string sql = $"insert into book values('{textBoxBookISBN.Text}','{textBoxBookTitle.Text}','{textBoxBookAuthor.Text}','{textBoxBookPress.Text}',{textBoxBookStock.Text})";
-                dao.Execute(sql);
-                MessageBox.Show("success");
-                dao.DaoClose();
-                this.Close();
+                try
+                {
+                    Dao dao = new Dao();
+                    string sql = $"insert into book values('{textBoxBookISBN.Text}','{textBoxBookTitle.Text}','{textBoxBookAuthor.Text}','{textBoxBookPress.Text}',{textBoxBookStock.Text})";
+                    dao.Execute(sql);
+                    MessageBox.Show("success");
+                    dao.DaoClose();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("fail");
+                }
+
+
+
+                
             }
             else
             {

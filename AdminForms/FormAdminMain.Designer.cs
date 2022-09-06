@@ -1,6 +1,6 @@
 ﻿namespace BookManageApp_Access
 {
-    partial class FormAdmin
+    partial class FormAdminMain
     {
         /// <summary>
         /// Required designer variable.

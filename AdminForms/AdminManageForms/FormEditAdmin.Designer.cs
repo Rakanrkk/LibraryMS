@@ -1,6 +1,6 @@
-﻿namespace BookManageApp_Access
+﻿namespace BookManageApp_Access.AdminForms.AdminManageForms
 {
-    partial class FormStu
+    partial class FormEditAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "stu";
+            this.Text = "FormEditAdmin";
         }
 
         #endregion

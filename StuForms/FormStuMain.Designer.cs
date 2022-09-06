@@ -1,6 +1,6 @@
-﻿namespace BookManageApp_Access.AdminForms.BookManageForms
+﻿namespace BookManageApp_Access.StuForms
 {
-    partial class FormBookMS
+    partial class FormStuMain
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAddBook = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonDeleteBook = new System.Windows.Forms.Button();
             this.buttonSearchISBN = new System.Windows.Forms.Button();
             this.buttonSearchTitle = new System.Windows.Forms.Button();
             this.textBoxSearchISBN = new System.Windows.Forms.TextBox();
@@ -45,6 +42,7 @@
             this.database1DataSet = new BookManageApp_Access.DB.Database1DataSet();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookTableAdapter = new BookManageApp_Access.DB.Database1DataSetTableAdapters.bookTableAdapter();
+            this.buttonBorrowBook = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
@@ -111,36 +109,6 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // buttonAddBook
-            // 
-            this.buttonAddBook.Location = new System.Drawing.Point(1074, 114);
-            this.buttonAddBook.Name = "buttonAddBook";
-            this.buttonAddBook.Size = new System.Drawing.Size(153, 73);
-            this.buttonAddBook.TabIndex = 1;
-            this.buttonAddBook.Text = "添加书籍";
-            this.buttonAddBook.UseVisualStyleBackColor = true;
-            this.buttonAddBook.Click += new System.EventHandler(this.buttonAddBook_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1074, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 73);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "编辑书籍";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonEditBook_Click);
-            // 
-            // buttonDeleteBook
-            // 
-            this.buttonDeleteBook.Location = new System.Drawing.Point(1074, 227);
-            this.buttonDeleteBook.Name = "buttonDeleteBook";
-            this.buttonDeleteBook.Size = new System.Drawing.Size(153, 73);
-            this.buttonDeleteBook.TabIndex = 1;
-            this.buttonDeleteBook.Text = "删除书籍";
-            this.buttonDeleteBook.UseVisualStyleBackColor = true;
-            this.buttonDeleteBook.Click += new System.EventHandler(this.buttonDeleteBook_Click);
-            // 
             // buttonSearchISBN
             // 
             this.buttonSearchISBN.Location = new System.Drawing.Point(1236, 547);
@@ -167,7 +135,6 @@
             this.textBoxSearchISBN.Name = "textBoxSearchISBN";
             this.textBoxSearchISBN.Size = new System.Drawing.Size(207, 28);
             this.textBoxSearchISBN.TabIndex = 2;
-            this.textBoxSearchISBN.TextChanged += new System.EventHandler(this.textBoxSearchISBN_TextChanged);
             // 
             // textBoxSearchTitle
             // 
@@ -191,20 +158,28 @@
             // 
             this.bookTableAdapter.ClearBeforeFill = true;
             // 
-            // FormBookMS
+            // buttonBorrowBook
+            // 
+            this.buttonBorrowBook.Location = new System.Drawing.Point(1057, 225);
+            this.buttonBorrowBook.Name = "buttonBorrowBook";
+            this.buttonBorrowBook.Size = new System.Drawing.Size(170, 102);
+            this.buttonBorrowBook.TabIndex = 3;
+            this.buttonBorrowBook.Text = "借阅";
+            this.buttonBorrowBook.UseVisualStyleBackColor = true;
+            this.buttonBorrowBook.Click += new System.EventHandler(this.buttonBorrowBook_Click);
+            // 
+            // FormBookStu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 875);
+            this.Controls.Add(this.buttonBorrowBook);
             this.Controls.Add(this.textBoxSearchTitle);
             this.Controls.Add(this.textBoxSearchISBN);
             this.Controls.Add(this.buttonSearchTitle);
             this.Controls.Add(this.buttonSearchISBN);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonDeleteBook);
-            this.Controls.Add(this.buttonAddBook);
             this.Controls.Add(this.dataGridViewBook);
-            this.Name = "FormBookMS";
+            this.Name = "FormBookStu";
             this.Text = "图书管理页面";
             this.Load += new System.EventHandler(this.FormBookMS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).EndInit();
@@ -218,9 +193,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewBook;
-        private System.Windows.Forms.Button buttonAddBook;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonDeleteBook;
         private System.Windows.Forms.Button buttonSearchISBN;
         private System.Windows.Forms.Button buttonSearchTitle;
         private System.Windows.Forms.TextBox textBoxSearchISBN;
@@ -233,5 +205,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button buttonBorrowBook;
     }
 }

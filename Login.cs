@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using BookManageApp_Access.StuForms;
+
 
 namespace BookManageApp_Access
 {
@@ -9,6 +11,7 @@ namespace BookManageApp_Access
         public Login()
         {
             InitializeComponent();
+
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -34,7 +37,8 @@ namespace BookManageApp_Access
                 if (dc.Read())
                 {
                     MessageBox.Show("登录成功");
-                    FormStu formStu = new FormStu();
+                    UserData.UID = textBoxId.Text;
+                    FormStuMain formStu = new FormStuMain();
                     this.Hide();
                     formStu.ShowDialog();
                     this.Show();
@@ -58,7 +62,7 @@ namespace BookManageApp_Access
                 if (dc.Read())
                 {
                     MessageBox.Show("登录成功");
-                    FormAdmin formAdmin = new FormAdmin();
+                    FormAdminMain formAdmin = new FormAdminMain();
                     this.Hide();
                     formAdmin.ShowDialog();
                     this.Show();

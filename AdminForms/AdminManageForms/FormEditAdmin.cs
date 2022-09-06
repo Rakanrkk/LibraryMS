@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManageApp_Access
+namespace BookManageApp_Access.AdminForms.AdminManageForms
 {
-    public partial class FormStu : Form
+    public partial class FormEditAdmin : Form
     {
-        public FormStu()
+        public FormEditAdmin()
         {
             InitializeComponent();
         }

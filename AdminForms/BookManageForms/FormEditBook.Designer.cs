@@ -1,4 +1,4 @@
-﻿namespace BookManageApp_Access
+﻿namespace BookManageApp_Access.AdminForms.BookManageForms
 {
     partial class FormEditBook
     {
@@ -172,6 +172,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormEditBook";
             this.Text = "编辑图书";
+            this.Load += new System.EventHandler(this.FormEditBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

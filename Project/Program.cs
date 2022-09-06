@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BookManageApp_Access.AdminForms.BookManageForms;
+using BookManageApp_Access.AdminForms.AdminManageForms;
 namespace BookManageApp_Access
 {
     internal static class Program

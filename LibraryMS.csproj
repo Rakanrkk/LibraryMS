@@ -24,7 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -107,6 +108,24 @@
     <Compile Include="AdminForms\AdminManageForms\FormAddAdmin.Designer.cs">
       <DependentUpon>FormAddAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormAdminMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormAdminMS.Designer.cs">
+      <DependentUpon>FormAdminMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormEditAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormEditAdmin.Designer.cs">
+      <DependentUpon>FormEditAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormBookSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\BookManageForms\FormBookSearchResult.Designer.cs">
+      <DependentUpon>FormBookSearchResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,11 +137,11 @@
     <Compile Include="AdminForms\BookManageForms\FormAddBook.Designer.cs">
       <DependentUpon>FormAddBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\FormAdmin.cs">
+    <Compile Include="AdminForms\FormAdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="AdminForms\FormAdminMain.Designer.cs">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\Dao.cs" />
     <Compile Include="AdminForms\BookManageForms\FormBookMS.cs">
@@ -146,23 +165,50 @@
     </Compile>
     <Compile Include="Project\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormStu.cs">
+    <Compile Include="StuForms\FormStuBookSearchResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStu.Designer.cs">
-      <DependentUpon>FormStu.cs</DependentUpon>
+    <Compile Include="StuForms\FormStuBookSearchResult.Designer.cs">
+      <DependentUpon>FormStuBookSearchResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="StuForms\FormStuMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StuForms\FormStuMain.Designer.cs">
+      <DependentUpon>FormStuMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StuForms\FormStuBorrowed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StuForms\FormStuBorrowed.Designer.cs">
+      <DependentUpon>FormStuBorrowed.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminForms\AdminManageForms\FormAddAdmin.resx">
+      <DependentUpon>FormAddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookManageForms\FormAddBook.resx">
       <DependentUpon>FormAddBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="AdminForms\BookManageForms\FormBookSearchResult.resx">
+      <DependentUpon>FormBookSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\FormAdminMain.resx">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookManageForms\FormBookMS.resx">
       <DependentUpon>FormBookMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookManageForms\FormEditBook.resx">
       <DependentUpon>FormEditBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StuForms\FormStuBookSearchResult.resx">
+      <DependentUpon>FormStuBookSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StuForms\FormStuMain.resx">
+      <DependentUpon>FormStuMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StuForms\FormStuBorrowed.resx">
+      <DependentUpon>FormStuBorrowed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

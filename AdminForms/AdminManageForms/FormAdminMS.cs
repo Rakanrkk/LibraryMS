@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BookManageApp_Access.AdminForms.AdminManageForms
 {
-    public partial class FormAddAdmin : Form
+    public partial class FormAdminMS : Form
     {
-        public FormAddAdmin()
+        public FormAdminMS()
         {
             InitializeComponent();
-        }
-
-        private void FormAddAdmin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

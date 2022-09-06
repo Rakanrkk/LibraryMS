@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using BookManageApp_Access.AdminForms.BookManageForms;
 
-namespace BookManageApp_Access
+namespace BookManageApp_Access.AdminForms.BookManageForms
 {
     public partial class FormBookMS : Form
     {
@@ -80,7 +81,7 @@ namespace BookManageApp_Access
 
         private void buttonEditBook_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 string id = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
                 string title=dataGridViewBook.SelectedRows[0].Cells[1].Value.ToString();
@@ -91,14 +92,43 @@ namespace BookManageApp_Access
                 formEditBook.ShowDialog();
                 ShowBooks();
             }
-            catch
+            /*catch
             {
                 MessageBox.Show("请选中要修改的书籍");
 
-            }
+            }*/
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonSearchISBN_Click(object sender, EventArgs e)
+        {
+            Dao dao = new Dao();
+            string sql = $"select * from book where isbn='{textBoxSearchISBN.Text}'";
+            IDataReader dc = dao.read(sql);
+            FormBookSearchResult formBookSearchResult = new FormBookSearchResult(ref dc);
+            formBookSearchResult.ShowDialog();
+            ShowBooks();
+            dc.Close();
+            dao.DaoClose();
+        }
+
+        private void textBoxSearchISBN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSearchTitle_Click(object sender, EventArgs e)
+        {
+            Dao dao = new Dao();
+            string sql = $"select * from book where title like '%{textBoxSearchTitle.Text}%'";
+            IDataReader dc = dao.read(sql);
+            FormBookSearchResult formBookSearchResult = new FormBookSearchResult(ref dc);
+            formBookSearchResult.ShowDialog();
+            ShowBooks();
+            dc.Close();
+            dao.DaoClose();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

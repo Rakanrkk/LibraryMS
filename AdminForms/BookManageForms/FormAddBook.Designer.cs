@@ -1,4 +1,4 @@
-﻿namespace BookManageApp_Access
+﻿namespace BookManageApp_Access.AdminForms.BookManageForms
 {
     partial class FormAddBook
     {

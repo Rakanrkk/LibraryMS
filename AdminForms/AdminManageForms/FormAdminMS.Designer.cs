@@ -1,6 +1,6 @@
 ﻿namespace BookManageApp_Access.AdminForms.AdminManageForms
 {
-    partial class FormAddAdmin
+    partial class FormAdminMS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FormAddAdmin
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormAddAdmin";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormAddAdmin_Load);
-            this.ResumeLayout(false);
-
+            this.Text = "FormAdminMS";
         }
 
         #endregion

@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BookManageApp_Access.AdminForms.BookManageForms;
 namespace BookManageApp_Access
 {
-    public partial class FormAdmin : Form
+    public partial class FormAdminMain : Form
     {
-        public FormAdmin()
+        public FormAdminMain()
         {
             InitializeComponent();
         }

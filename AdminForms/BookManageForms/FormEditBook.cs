@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManageApp_Access
+namespace BookManageApp_Access.AdminForms.BookManageForms
 {
     public partial class FormEditBook : Form
     {
@@ -43,7 +43,7 @@ namespace BookManageApp_Access
                 && textBoxBookTitle.Text != "")
             {
                 Dao dao = new Dao();
-                string sql = $"update book set isbn='{textBoxBookISBN.Text}',title='{textBoxBookTitle.Text}',author='{textBoxBookAuthor.Text}',press='{textBoxBookPress.Text}',stock='{textBoxBookStock.Text}'where isbn='{key}'";
+                string sql = $"update book set isbn='{textBoxBookISBN.Text}',title='{textBoxBookTitle.Text}',author='{textBoxBookAuthor.Text}',press='{textBoxBookPress.Text}',stock={textBoxBookStock.Text} where isbn='{key}'";
                 dao.Execute(sql);
                 MessageBox.Show("success");
                 dao.DaoClose();
@@ -53,6 +53,11 @@ namespace BookManageApp_Access
             {
                 MessageBox.Show("请输入书籍信息");
             }
+        }
+
+        private void FormEditBook_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
