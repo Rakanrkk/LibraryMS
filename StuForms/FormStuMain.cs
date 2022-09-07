@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using BookManageApp_Access.StuForms;
-using BookManageApp_Access;
 
 namespace BookManageApp_Access.StuForms
 {
@@ -20,32 +17,13 @@ namespace BookManageApp_Access.StuForms
             Dao dao = new Dao();
             string sql = "select * from book";
             IDataReader dc = dao.read(sql);
-            while(dc.Read())
+            while (dc.Read())
             {
                 dataGridViewBook.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
             }
             dc.Close();
             dao.DaoClose();
         }
-        private void dataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormBookMS_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
         private void buttonSearchISBN_Click(object sender, EventArgs e)
         {
             Dao dao = new Dao();
@@ -77,32 +55,33 @@ namespace BookManageApp_Access.StuForms
         }
 
         private void buttonBorrowBook_Click(object sender, EventArgs e)
-        {   
+        {
             Dao dao = new Dao();
             string sql;
-            string id = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
+            string isbn = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
             int stock = int.Parse(dataGridViewBook.SelectedRows[0].Cells[4].Value.ToString());
-            int num = int.Parse(dao.read($"select * from stu where id='{UserData.UID}'")[3].ToString());
-            if (stock>0)
+            string no = "no";
+            if (stock > 0)
             {
-                if (num>0)
-                {
-                    sql = $"insert into borrow values('{id}','{DateTime.Now.ToString()}','{UserData.UID},'{0}')";
-                    dao.Execute(sql);
-                    sql = $"update book set stock=stock-1 where isbn='{id}'";
-                    dao.Execute(sql);
-                    sql = $"update stu set num=num+1 where isbn='{id}'";
-                }
-                else
-                {
-                    MessageBox.Show("你已经借满五本了");
-                }
+                sql = $"insert into borrow values('{isbn}','{DateTime.Now.ToString()}','{UserData.UID}','{no}')";
+                dao.Execute(sql);
+                sql = $"update book set stock=stock-1 where isbn='{isbn}'";
+                dao.Execute(sql);
+                MessageBox.Show("success");
             }
             else
             {
                 MessageBox.Show("库存不足");
+                dao.read("select * from book");//请勿删除此行，否则报错
             }
             dao.DaoClose();
+            ShowBooks();
+        }
+
+        private void buttonCheckBorrowed_Click(object sender, EventArgs e)
+        {
+            FormStuBorrowed formStuBorrowed = new FormStuBorrowed();
+            formStuBorrowed.ShowDialog();
         }
     }
 }

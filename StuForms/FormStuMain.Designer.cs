@@ -43,6 +43,7 @@
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookTableAdapter = new BookManageApp_Access.DB.Database1DataSetTableAdapters.bookTableAdapter();
             this.buttonBorrowBook = new System.Windows.Forms.Button();
+            this.buttonCheckBorrowed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
@@ -71,9 +72,7 @@
             this.dataGridViewBook.RowTemplate.Height = 30;
             this.dataGridViewBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBook.Size = new System.Drawing.Size(912, 875);
-            this.dataGridViewBook.TabIndex = 0;
-            this.dataGridViewBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBook_CellContentClick);
-            // 
+            this.dataGridViewBook.TabIndex = 0;            // 
             // Column1
             // 
             this.Column1.HeaderText = "ISBN";
@@ -168,20 +167,30 @@
             this.buttonBorrowBook.UseVisualStyleBackColor = true;
             this.buttonBorrowBook.Click += new System.EventHandler(this.buttonBorrowBook_Click);
             // 
-            // FormBookStu
+            // buttonCheckBorrowed
+            // 
+            this.buttonCheckBorrowed.Location = new System.Drawing.Point(1057, 361);
+            this.buttonCheckBorrowed.Name = "buttonCheckBorrowed";
+            this.buttonCheckBorrowed.Size = new System.Drawing.Size(170, 100);
+            this.buttonCheckBorrowed.TabIndex = 4;
+            this.buttonCheckBorrowed.Text = "查看已借阅书目";
+            this.buttonCheckBorrowed.UseVisualStyleBackColor = true;
+            this.buttonCheckBorrowed.Click += new System.EventHandler(this.buttonCheckBorrowed_Click);
+            // 
+            // FormStuMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 875);
+            this.Controls.Add(this.buttonCheckBorrowed);
             this.Controls.Add(this.buttonBorrowBook);
             this.Controls.Add(this.textBoxSearchTitle);
             this.Controls.Add(this.textBoxSearchISBN);
             this.Controls.Add(this.buttonSearchTitle);
             this.Controls.Add(this.buttonSearchISBN);
             this.Controls.Add(this.dataGridViewBook);
-            this.Name = "FormBookStu";
+            this.Name = "FormStuMain";
             this.Text = "图书管理页面";
-            this.Load += new System.EventHandler(this.FormBookMS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
@@ -206,5 +215,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button buttonBorrowBook;
+        private System.Windows.Forms.Button buttonCheckBorrowed;
     }
 }

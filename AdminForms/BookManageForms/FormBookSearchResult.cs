@@ -68,8 +68,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             {
                 MessageBox.Show("请先选中要删除的书目");
             }
-
-
         }
 
         private void buttonEditBook_Click(object sender, EventArgs e)

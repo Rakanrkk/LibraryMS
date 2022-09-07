@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookManageApp_Access.AdminForms.BookManageForms;
 using BookManageApp_Access.AdminForms.AdminManageForms;
+using BookManageApp_Access.StuForms;
+
 namespace BookManageApp_Access
 {
     internal static class Program
@@ -17,8 +19,9 @@ namespace BookManageApp_Access
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Login());
-            Application.Run(new FormBookMS());
+            Application.Run(new Login());
+            //Application.Run(new FormBookMS());
+            //Application.Run(new FormStuMain());
         }
     }
 }

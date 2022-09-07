@@ -105,6 +105,7 @@
             this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "注册";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // radioButtonUser
             // 

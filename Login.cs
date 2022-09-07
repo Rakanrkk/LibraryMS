@@ -97,6 +97,9 @@ namespace BookManageApp_Access
 
         }
 
-
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("注册请联系管理");
+        }
     }
 }
