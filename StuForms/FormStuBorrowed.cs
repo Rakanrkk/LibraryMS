@@ -26,7 +26,7 @@ namespace BookManageApp_Access.StuForms
         {
             dataGridViewBookBorrowed.Rows.Clear();
             Dao dao = new Dao();
-            string sql = @"SELECT borrow.isbn, book.title, book.author, book.press, borrow.time, borrow.if_returned FROM (stu INNER JOIN borrow ON stu.id = borrow.uid) INNER JOIN book ON borrow.isbn = book.isbn ORDER BY borrow.time;";
+            string sql = "SELECT borrow.isbn, book.title, book.author, book.press, borrow.time, borrow.if_returned FROM (stu INNER JOIN borrow ON stu.id = borrow.uid) INNER JOIN book ON borrow.isbn = book.isbn ORDER BY borrow.time;";
             IDataReader dc = dao.read(sql);
             while (dc.Read())
             {
@@ -38,6 +38,25 @@ namespace BookManageApp_Access.StuForms
 
         private void buttonReturnBook_Click(object sender, EventArgs e)
         {
+            string if_returned = dataGridViewBookBorrowed.SelectedRows[0].Cells[5].Value.ToString();
+            if(if_returned=="no")
+            {
+                string isbn = dataGridViewBookBorrowed.SelectedRows[0].Cells[0].Value.ToString();
+                string time = dataGridViewBookBorrowed.SelectedRows[0].Cells[4].Value.ToString();
+                Dao dao = new Dao();
+                string sql = $"update book set stock=stock+1 where isbn='{isbn}'";
+                dao.Execute(sql);
+                sql = $"update borrow set if_returned='{"yes"}' where time='{time}'";
+                dao.Execute(sql);
+                sql = $"insert into return values('{isbn}','{DateTime.Now.ToString()}','{UserData.UID}')";
+                dao.Execute(sql);
+                dao.DaoClose();
+            }
+            else
+            {
+                MessageBox.Show("这本书已经归还");
+            }
+            ShowBooksBorrowed();
 
         }
     }
