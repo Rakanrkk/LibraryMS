@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookManageApp_Access.AdminForms.BookManageForms;
+using BookManageApp_Access.AdminForms.AdminManageForms;
+using BookManageApp_Access.AdminForms.StuManageForms;
 namespace BookManageApp_Access
 {
     public partial class FormAdminMain : Form
@@ -24,6 +26,16 @@ namespace BookManageApp_Access
             formBookMS.ShowDialog();
             this.Show();
         }
+        private void AdminManageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdminMS formAdminMS = new FormAdminMS();
+            this.Hide();
+            formAdminMS.ShowDialog();
+            this.Show();
+        }
+
+
+
 
         private void StuManageToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,9 +52,6 @@ namespace BookManageApp_Access
 
         }
 
-        private void AdminManageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

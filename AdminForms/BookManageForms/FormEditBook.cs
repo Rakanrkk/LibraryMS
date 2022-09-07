@@ -43,7 +43,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
                 && textBoxBookTitle.Text != "")
             {
                 Dao dao = new Dao();
-                string sql = $"update book set isbn='{textBoxBookISBN.Text}',title='{textBoxBookTitle.Text}',author='{textBoxBookAuthor.Text}',press='{textBoxBookPress.Text}',stock={textBoxBookStock.Text} where isbn='{key}'";
+                string sql = $"update book set title='{textBoxBookTitle.Text}',author='{textBoxBookAuthor.Text}',press='{textBoxBookPress.Text}',stock={textBoxBookStock.Text} where isbn='{key}'";
                 dao.Execute(sql);
                 MessageBox.Show("success");
                 dao.DaoClose();

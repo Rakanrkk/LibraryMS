@@ -114,6 +114,12 @@
     <Compile Include="AdminForms\AdminManageForms\FormAdminMS.Designer.cs">
       <DependentUpon>FormAdminMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormAdminSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\AdminManageForms\FormAdminSearchResult.Designer.cs">
+      <DependentUpon>FormAdminSearchResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForms\AdminManageForms\FormEditAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,30 @@
     </Compile>
     <Compile Include="AdminForms\BookManageForms\FormBookSearchResult.Designer.cs">
       <DependentUpon>FormBookSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormAddStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormAddStu.Designer.cs">
+      <DependentUpon>FormAddStu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormStuMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormStuMS.Designer.cs">
+      <DependentUpon>FormStuMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormStuSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormStuSearchResult.Designer.cs">
+      <DependentUpon>FormStuSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormEditStu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\StuManageForms\FormEditStu.Designer.cs">
+      <DependentUpon>FormEditStu.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -186,6 +216,15 @@
     <EmbeddedResource Include="AdminForms\AdminManageForms\FormAddAdmin.resx">
       <DependentUpon>FormAddAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AdminManageForms\FormAdminMS.resx">
+      <DependentUpon>FormAdminMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AdminManageForms\FormAdminSearchResult.resx">
+      <DependentUpon>FormAdminSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\AdminManageForms\FormEditAdmin.resx">
+      <DependentUpon>FormEditAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookManageForms\FormAddBook.resx">
       <DependentUpon>FormAddBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +239,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookManageForms\FormEditBook.resx">
       <DependentUpon>FormEditBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\StuManageForms\FormAddStu.resx">
+      <DependentUpon>FormAddStu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\StuManageForms\FormStuMS.resx">
+      <DependentUpon>FormStuMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\StuManageForms\FormStuSearchResult.resx">
+      <DependentUpon>FormStuSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\StuManageForms\FormEditStu.resx">
+      <DependentUpon>FormEditStu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StuForms\FormStuBookSearchResult.resx">
       <DependentUpon>FormStuBookSearchResult.cs</DependentUpon>
@@ -267,8 +318,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdminForms\StuManageForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

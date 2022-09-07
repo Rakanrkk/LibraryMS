@@ -86,6 +86,7 @@
             this.textBoxBookISBN.Font = new System.Drawing.Font("宋体", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxBookISBN.Location = new System.Drawing.Point(393, 298);
             this.textBoxBookISBN.Name = "textBoxBookISBN";
+            this.textBoxBookISBN.ReadOnly = true;
             this.textBoxBookISBN.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookISBN.TabIndex = 9;
             // 

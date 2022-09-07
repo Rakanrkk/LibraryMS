@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BookManageApp_Access.AdminForms.AdminManageForms
+namespace BookManageApp_Access.AdminForms.StuManageForms
 {
-    public partial class FormAddAdmin : Form
+    public partial class FormAddStu : Form
     {
-        public FormAddAdmin()
+        public FormAddStu()
         {
             InitializeComponent();
         }
-        private void buttonCancalAddAdmin_Click(object sender, EventArgs e)
+        private void buttonCancalAddStu_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void buttonAddAdmin_Click(object sender, EventArgs e)
+        private void buttonAddStu_Click(object sender, EventArgs e)
         {
-            if (textBoxAdminPsw.Text != "" 
-                && textBoxAdminId.Text != "")
+            if (textBoxStuPsw.Text != "" 
+                && textBoxStuId.Text != "")
             {
                 try
                 {
                     Dao dao = new Dao();
-                    string sql = $"insert into Admin values('{textBoxAdminId.Text}','{textBoxAdminPsw.Text}')";
+                    string sql = $"insert into Stu values('{textBoxStuId.Text}','{textBoxStuPsw.Text}')";
                     dao.Execute(sql);
                     MessageBox.Show("success");
                     dao.DaoClose();
@@ -35,7 +35,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
             }
             else
             {
-                MessageBox.Show("请输入管理员信息");
+                MessageBox.Show("请输入学生信息");
             }
             
         }
