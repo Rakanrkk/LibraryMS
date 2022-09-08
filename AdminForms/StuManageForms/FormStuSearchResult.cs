@@ -50,7 +50,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
 
                     string id = dataGridViewResultStu.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from Stu where id ='{id}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");

@@ -15,7 +15,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
         public void ShowAdmins()
         {
             dataGridViewAdmin.Rows.Clear();
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = "select * from Admin";
             IDataReader dc = dao.read(sql);
             while(dc.Read())
@@ -40,7 +40,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
                     
                     string id = dataGridViewAdmin.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from Admin where id ='{id}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");
@@ -93,7 +93,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
 
         private void buttonSearchId_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from Admin where id='{textBoxSearchId.Text}'";
             IDataReader dc = dao.read(sql);
             FormAdminSearchResult formAdminSearchResult = new FormAdminSearchResult(ref dc);

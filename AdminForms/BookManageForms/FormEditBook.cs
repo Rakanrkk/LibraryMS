@@ -13,10 +13,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
     public partial class FormEditBook : Form
     {
         string key;
-        public FormEditBook()
-        {
-            InitializeComponent();
-        }
         public FormEditBook(string isbn,string title,string author,string press,string stock)
         {
             InitializeComponent();
@@ -42,7 +38,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
                 && textBoxBookStock.Text != ""
                 && textBoxBookTitle.Text != "")
             {
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = $"update book set title='{textBoxBookTitle.Text}',author='{textBoxBookAuthor.Text}',press='{textBoxBookPress.Text}',stock={textBoxBookStock.Text} where isbn='{key}'";
                 dao.Execute(sql);
                 MessageBox.Show("success");
@@ -53,11 +49,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             {
                 MessageBox.Show("请输入书籍信息");
             }
-        }
-
-        private void FormEditBook_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

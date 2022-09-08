@@ -48,7 +48,6 @@
             this.title.Size = new System.Drawing.Size(313, 30);
             this.title.TabIndex = 0;
             this.title.Text = "欢迎使用图书管理系统";
-            this.title.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -58,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "账户：";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -119,7 +117,6 @@
             this.radioButtonUser.TabStop = true;
             this.radioButtonUser.Text = "用户";
             this.radioButtonUser.UseVisualStyleBackColor = true;
-            this.radioButtonUser.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
             // 
             // radioButtonAdmin
             // 
@@ -149,7 +146,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

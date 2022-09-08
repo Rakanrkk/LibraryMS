@@ -167,7 +167,6 @@
             this.textBoxSearchISBN.Name = "textBoxSearchISBN";
             this.textBoxSearchISBN.Size = new System.Drawing.Size(207, 28);
             this.textBoxSearchISBN.TabIndex = 2;
-            this.textBoxSearchISBN.TextChanged += new System.EventHandler(this.textBoxSearchISBN_TextChanged);
             // 
             // textBoxSearchTitle
             // 
@@ -175,7 +174,6 @@
             this.textBoxSearchTitle.Name = "textBoxSearchTitle";
             this.textBoxSearchTitle.Size = new System.Drawing.Size(207, 28);
             this.textBoxSearchTitle.TabIndex = 2;
-            this.textBoxSearchTitle.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // database1DataSet
             // 
@@ -206,7 +204,6 @@
             this.Controls.Add(this.dataGridViewBook);
             this.Name = "FormBookMS";
             this.Text = "图书管理页面";
-            this.Load += new System.EventHandler(this.FormBookMS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace BookManageApp_Access
 {
-    internal class Dao
+    internal class DAO
     {
         OleDbConnection conn;
         public OleDbConnection connect()//链接数据库

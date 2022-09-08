@@ -15,7 +15,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
         public void ShowStus()
         {
             dataGridViewStu.Rows.Clear();
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = "select * from Stu";
             IDataReader dc = dao.read(sql);
             while(dc.Read())
@@ -40,7 +40,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
                     
                     string id = dataGridViewStu.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from Stu where id ='{id}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");
@@ -92,7 +92,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
 
         private void buttonSearchId_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from Stu where id='{textBoxSearchId.Text}'";
             IDataReader dc = dao.read(sql);
             FormStuSearchResult formStuSearchResult = new FormStuSearchResult(ref dc);

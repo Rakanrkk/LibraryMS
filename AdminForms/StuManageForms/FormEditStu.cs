@@ -37,7 +37,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
                 && textBoxStuId.Text != ""
                 && textBoxStuName.Text!="")
             {
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = $"update Stu set psw={textBoxStuPsw.Text}, NAME={textBoxStuName.Text} where id='{textBoxStuId.Text}'";
                 dao.Execute(sql);
                 MessageBox.Show("success");

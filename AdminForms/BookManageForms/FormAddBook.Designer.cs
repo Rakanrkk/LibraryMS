@@ -59,7 +59,6 @@
             this.textBoxBookTitle.Name = "textBoxBookTitle";
             this.textBoxBookTitle.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookTitle.TabIndex = 1;
-            this.textBoxBookTitle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -78,7 +77,6 @@
             this.textBoxBookAuthor.Name = "textBoxBookAuthor";
             this.textBoxBookAuthor.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookAuthor.TabIndex = 1;
-            this.textBoxBookAuthor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -97,7 +95,6 @@
             this.textBoxBookPress.Name = "textBoxBookPress";
             this.textBoxBookPress.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookPress.TabIndex = 1;
-            this.textBoxBookPress.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -116,7 +113,6 @@
             this.textBoxBookISBN.Name = "textBoxBookISBN";
             this.textBoxBookISBN.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookISBN.TabIndex = 1;
-            this.textBoxBookISBN.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -135,7 +131,6 @@
             this.textBoxBookStock.Name = "textBoxBookStock";
             this.textBoxBookStock.Size = new System.Drawing.Size(239, 37);
             this.textBoxBookStock.TabIndex = 1;
-            this.textBoxBookStock.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonAddBook
             // 

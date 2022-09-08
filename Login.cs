@@ -28,7 +28,7 @@ namespace BookManageApp_Access
         {
             if (radioButtonUser.Checked == true)
             {
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = "select * from stu where id='" + textBoxId.Text + "' and psw='" + textBoxPassword.Text + "'";
                 //MessageBox.Show(sql);
                 IDataReader dc = dao.read(sql);
@@ -53,7 +53,7 @@ namespace BookManageApp_Access
             }
             if (radioButtonAdmin.Checked == true)
             {
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = "select * from admin where id='" + textBoxId.Text + "' and psw='" + textBoxPassword.Text + "'";
                 //MessageBox.Show(sql);
                 IDataReader dc = dao.read(sql);
@@ -76,27 +76,6 @@ namespace BookManageApp_Access
             }
             return false;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             MessageBox.Show("注册请联系管理");

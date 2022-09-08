@@ -25,7 +25,7 @@ namespace BookManageApp_Access.StuForms
         public void ShowBooksBorrowed()
         {
             dataGridViewBookBorrowed.Rows.Clear();
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = "SELECT borrow.isbn, book.title, book.author, book.press, borrow.time, borrow.if_returned FROM (stu INNER JOIN borrow ON stu.id = borrow.uid) INNER JOIN book ON borrow.isbn = book.isbn ORDER BY borrow.time;";
             IDataReader dc = dao.read(sql);
             while (dc.Read())
@@ -43,7 +43,7 @@ namespace BookManageApp_Access.StuForms
             {
                 string isbn = dataGridViewBookBorrowed.SelectedRows[0].Cells[0].Value.ToString();
                 string time = dataGridViewBookBorrowed.SelectedRows[0].Cells[4].Value.ToString();
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = $"update book set stock=stock+1 where isbn='{isbn}'";
                 dao.Execute(sql);
                 sql = $"update borrow set if_returned='{"yes"}' where time='{time}'";

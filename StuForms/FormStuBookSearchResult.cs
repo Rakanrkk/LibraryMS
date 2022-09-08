@@ -46,5 +46,28 @@ namespace BookManageApp_Access.StuForms
 
         }
 
+        private void buttonBorrowBook_Click(object sender, EventArgs e)
+        {
+            DAO dao = new DAO();
+            string sql;
+            string isbn = dataGridViewResultBook.SelectedRows[0].Cells[0].Value.ToString();
+            int stock = int.Parse(dataGridViewResultBook.SelectedRows[0].Cells[4].Value.ToString());
+            string no = "no";
+            if (stock > 0)
+            {
+                sql = $"insert into borrow values('{isbn}','{DateTime.Now.ToString()}','{UserData.UID}','{no}')";
+                dao.Execute(sql);
+                sql = $"update book set stock=stock-1 where isbn='{isbn}'";
+                dao.Execute(sql);
+                MessageBox.Show("success");
+            }
+            else
+            {
+                MessageBox.Show("库存不足");
+                dao.read("select * from book");//请勿删除此行，否则报错
+            }
+            dao.DaoClose();
+            ShowResults();
+        }
     }
 }

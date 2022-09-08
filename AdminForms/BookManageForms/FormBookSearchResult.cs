@@ -22,10 +22,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
                 dataGridViewResultBook.Rows.Add(dc[0].ToString(), dc[1].ToString(), dc[2].ToString(), dc[3].ToString(), dc[4].ToString());
             }
         }
-        public FormBookSearchResult()
-        {
-            InitializeComponent();
-        }
 
         public FormBookSearchResult(ref IDataReader result)
         {
@@ -35,11 +31,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
 
 
         }
-        private void FormBookSearchResult_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonDeleteBook_Click(object sender, EventArgs e)
         {
             try
@@ -50,7 +41,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
 
                     string isbn = dataGridViewResultBook.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from book where isbn ='{isbn}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");
@@ -89,11 +80,5 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
 
             }
         }
-
-        private void dataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
     }
 }

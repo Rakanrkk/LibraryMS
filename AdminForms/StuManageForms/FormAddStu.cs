@@ -21,7 +21,7 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
             {
                 try
                 {
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     string sql = $"insert into Stu values('{textBoxStuId.Text}','{textBoxStuPsw.Text}')";
                     dao.Execute(sql);
                     MessageBox.Show("success");

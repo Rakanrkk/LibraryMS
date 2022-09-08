@@ -173,7 +173,7 @@
     <Compile Include="AdminForms\FormAdminMain.Designer.cs">
       <DependentUpon>FormAdminMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="DB\Dao.cs" />
+    <Compile Include="DB\DAO.cs" />
     <Compile Include="AdminForms\BookManageForms\FormBookMS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +275,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="DB\Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>

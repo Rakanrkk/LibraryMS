@@ -21,7 +21,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
             {
                 try
                 {
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     string sql = $"insert into Admin values('{textBoxAdminId.Text}','{textBoxAdminPsw.Text}')";
                     dao.Execute(sql);
                     MessageBox.Show("success");

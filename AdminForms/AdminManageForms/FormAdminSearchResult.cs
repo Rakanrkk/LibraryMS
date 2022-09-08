@@ -46,7 +46,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
 
                     string id = dataGridViewResultAdmin.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from Admin where id ='{id}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");

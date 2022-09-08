@@ -14,7 +14,7 @@ namespace BookManageApp_Access.StuForms
         public void ShowBooks()
         {
             dataGridViewBook.Rows.Clear();
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = "select * from book";
             IDataReader dc = dao.read(sql);
             while (dc.Read())
@@ -26,7 +26,7 @@ namespace BookManageApp_Access.StuForms
         }
         private void buttonSearchISBN_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from book where isbn='{textBoxSearchISBN.Text}'";
             IDataReader dc = dao.read(sql);
             FormStuBookSearchResult formStuBookSearchResult = new FormStuBookSearchResult(ref dc);
@@ -39,7 +39,7 @@ namespace BookManageApp_Access.StuForms
 
         private void buttonSearchTitle_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from book where title like '%{textBoxSearchTitle.Text}%'";
             IDataReader dc = dao.read(sql);
             FormStuBookSearchResult formBookSearchResult = new FormStuBookSearchResult(ref dc);
@@ -56,7 +56,7 @@ namespace BookManageApp_Access.StuForms
 
         private void buttonBorrowBook_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql;
             string isbn = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
             int stock = int.Parse(dataGridViewBook.SelectedRows[0].Cells[4].Value.ToString());

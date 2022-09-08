@@ -15,7 +15,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
         public void ShowBooks()
         {
             dataGridViewBook.Rows.Clear();
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = "select * from book";
             IDataReader dc = dao.read(sql);
             while(dc.Read())
@@ -40,7 +40,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
                     
                     string isbn = dataGridViewBook.SelectedRows[0].Cells[0].Value.ToString();
                     string sql = $"delete from book where isbn ='{isbn}'";
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     if (dao.Execute(sql) > 0)
                     {
                         MessageBox.Show("删除成功");
@@ -58,20 +58,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             {
                 MessageBox.Show("请先选中要删除的书目");
             }
-
-            
         }
-
-        private void FormBookMS_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAddBook_Click(object sender, EventArgs e)
         {
             FormAddBook formAddBook = new FormAddBook();
@@ -101,7 +88,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
 
         private void buttonSearchISBN_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from book where isbn='{textBoxSearchISBN.Text}'";
             IDataReader dc = dao.read(sql);
             FormBookSearchResult formBookSearchResult = new FormBookSearchResult(ref dc);
@@ -110,15 +97,9 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             dc.Close();
             dao.DaoClose();
         }
-
-        private void textBoxSearchISBN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSearchTitle_Click(object sender, EventArgs e)
         {
-            Dao dao = new Dao();
+            DAO dao = new DAO();
             string sql = $"select * from book where title like '%{textBoxSearchTitle.Text}%'";
             IDataReader dc = dao.read(sql);
             FormBookSearchResult formBookSearchResult = new FormBookSearchResult(ref dc);
@@ -126,11 +107,6 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             ShowBooks();
             dc.Close();
             dao.DaoClose();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

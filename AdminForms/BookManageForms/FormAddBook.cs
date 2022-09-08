@@ -9,17 +9,10 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancalAddBook_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void buttonAddBook_Click(object sender, EventArgs e)
         {
             if (textBoxBookAuthor.Text != "" 
@@ -30,7 +23,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
             {
                 try
                 {
-                    Dao dao = new Dao();
+                    DAO dao = new DAO();
                     string sql = $"insert into book values('{textBoxBookISBN.Text}','{textBoxBookTitle.Text}','{textBoxBookAuthor.Text}','{textBoxBookPress.Text}',{textBoxBookStock.Text})";
                     dao.Execute(sql);
                     MessageBox.Show("success");
@@ -40,11 +33,7 @@ namespace BookManageApp_Access.AdminForms.BookManageForms
                 catch
                 {
                     MessageBox.Show("fail");
-                }
-
-
-
-                
+                }   
             }
             else
             {

@@ -30,7 +30,7 @@ namespace BookManageApp_Access.AdminForms.AdminManageForms
             if (textBoxAdminPsw.Text != ""
                 && textBoxAdminId.Text != "")
             {
-                Dao dao = new Dao();
+                DAO dao = new DAO();
                 string sql = $"update Admin set psw={textBoxAdminPsw.Text} where id='{textBoxAdminId.Text}'";
                 dao.Execute(sql);
                 MessageBox.Show("success");

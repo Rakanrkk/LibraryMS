@@ -63,7 +63,6 @@
             this.dataGridViewResultBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewResultBook.Size = new System.Drawing.Size(1070, 889);
             this.dataGridViewResultBook.TabIndex = 3;
-            this.dataGridViewResultBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBook_CellContentClick);
             // 
             // Column1
             // 
@@ -130,7 +129,6 @@
             this.Controls.Add(this.dataGridViewResultBook);
             this.Name = "FormBookSearchResult";
             this.Text = "FormBookSearchResult";
-            this.Load += new System.EventHandler(this.FormBookSearchResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultBook)).EndInit();
             this.ResumeLayout(false);
 
