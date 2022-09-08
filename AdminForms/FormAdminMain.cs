@@ -33,13 +33,12 @@ namespace BookManageApp_Access
             formAdminMS.ShowDialog();
             this.Show();
         }
-
-
-
-
         private void StuManageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormStuMS formStuMS = new FormStuMS();
+            this.Hide();
+            formStuMS.ShowDialog();
+            this.Show();
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)

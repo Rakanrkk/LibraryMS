@@ -17,12 +17,13 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
         private void buttonAddStu_Click(object sender, EventArgs e)
         {
             if (textBoxStuPsw.Text != "" 
-                && textBoxStuId.Text != "")
+                && textBoxStuId.Text != ""
+                && textBoxStuName.Text!="")
             {
                 try
                 {
                     DAO dao = new DAO();
-                    string sql = $"insert into Stu values('{textBoxStuId.Text}','{textBoxStuPsw.Text}')";
+                    string sql = $"insert into Stu values('{textBoxStuId.Text}','{textBoxStuName.Text}','{textBoxStuPsw.Text}')";
                     dao.Execute(sql);
                     MessageBox.Show("success");
                     dao.DaoClose();

@@ -25,11 +25,6 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
             dc.Close();
             dao.DaoClose();
         }
-        private void dataGridViewStu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonDeleteStu_Click(object sender, EventArgs e)
         {
             try
@@ -60,16 +55,6 @@ namespace BookManageApp_Access.AdminForms.StuManageForms
             }
 
             
-        }
-
-        private void FormStuMS_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonAddStu_Click(object sender, EventArgs e)
